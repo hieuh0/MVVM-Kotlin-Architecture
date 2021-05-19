@@ -1,0 +1,21 @@
+rootProject.name = "MVVM-Kotlin"
+include ':app'
+//rootDir.eachDir {
+//    if (it.name != "buildSrc" && it.isDirectory() && file("${it.absolutePath}/build.gradle.kts")){
+//        it.exists()
+//    }else {
+////        print("${it.name}")
+//        include ":${it.name}"
+//    }
+//}
+//Include all the existent modules in the project
+//include ':buildSrc'
+//rootDir.walk()
+//        .maxDepth(1)
+//        .filter {
+//            it.name != "buildSrc" && it.isDirectory &&
+//                    file("${it.absolutePath}/build.gradle.kts").exists()
+//        }
+//        .forEach {
+//            include(":${it.name}")
+//        }

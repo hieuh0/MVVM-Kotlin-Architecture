@@ -1,0 +1,51 @@
+apply plugin: BuildPlugins.androidApplication
+apply plugin: BuildPlugins.kotlinAndroid
+apply plugin: BuildPlugins.kotlinKapt
+apply plugin: BuildPlugins.androidHilt
+apply plugin: BuildPlugins.kotlinAndroidExtensions
+apply plugin: ScriptPlugins.variants
+apply plugin: ScriptPlugins.quality
+apply plugin: ScriptPlugins.compilation
+apply plugin: BuildPlugins.navigation_safe
+apply plugin: BuildPlugins.easylauncherPlugin
+
+android {
+    compileSdkVersion AndroidSdk.compile
+    buildToolsVersion AndroidSdk.buildToolsVersion
+
+    defaultConfig {
+        applicationId AndroidClient.appId
+        minSdkVersion AndroidSdk.min
+        targetSdkVersion AndroidSdk.target
+        versionCode AndroidClient.versionCode
+        versionName AndroidClient.versionName
+
+        testInstrumentationRunner AndroidClient.testRunner
+    }
+
+}
+
+dependencies {
+    implementation "androidx.fragment:fragment-ktx:1.3.3"
+
+    implementation(Libraries.kotlinStdLib)
+    implementation(Libraries.ktxCore)
+    testImplementation TestLibraries.junit4
+    androidTestImplementation TestLibraries.testExtJunit
+    androidTestImplementation TestLibraries.testRunner
+
+    implementation(Libraries.appCompat)
+    implementation(Libraries.constraintLayout)
+    kapt(Libraries.hiltCompiler)
+    implementation(Libraries.hilt)
+    implementation(Libraries.material)
+    implementation(Libraries.kotlinCoroutines)
+    implementation(Libraries.kotlinCoroutinesAndroid)
+    implementation(Libraries.lifecycleCompiler)
+    implementation(Libraries.viewModel)
+    implementation(Libraries.liveData)
+    implementation(Libraries.navigation_fragment)
+    implementation(Libraries.navigation_ui)
+    implementation(Libraries.stetho)
+    implementation(Libraries.stetho_okhttp3)
+}
