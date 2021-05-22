@@ -25,7 +25,7 @@ abstract class BaseFragment<DataBinding : ViewDataBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater,getLayoutId(),container,false)
-        return binding.root
+        return _binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

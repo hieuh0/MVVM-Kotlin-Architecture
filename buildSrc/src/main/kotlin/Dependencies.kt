@@ -64,6 +64,7 @@ object Libraries{
         const val okHttpLoggingInterceptor = "4.9.0"
         const val nav_version = "2.3.5"
         const val stetho_version = "1.6.0"
+        const val fragment_version = "1.3.3"
     }
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Kotlin.standardLibrary}"
@@ -86,6 +87,7 @@ object Libraries{
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
     const val stetho = "com.facebook.stetho:stetho:${Versions.stetho_version}"
     const val stetho_okhttp3 = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho_version}"
+    const val fragment_ktx = "androidx.fragment:fragment-ktx:${Versions.fragment_version}"
 
 }
 

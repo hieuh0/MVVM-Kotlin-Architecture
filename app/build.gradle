@@ -7,7 +7,7 @@ apply plugin: ScriptPlugins.variants
 apply plugin: ScriptPlugins.quality
 apply plugin: ScriptPlugins.compilation
 apply plugin: BuildPlugins.navigation_safe
-apply plugin: BuildPlugins.easylauncherPlugin
+//apply plugin: BuildPlugins.easylauncherPlugin
 
 android {
     compileSdkVersion AndroidSdk.compile
@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    implementation "androidx.fragment:fragment-ktx:1.3.3"
+    implementation (Libraries.fragment_ktx)
 
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.ktxCore)

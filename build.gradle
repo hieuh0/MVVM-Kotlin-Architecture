@@ -11,7 +11,7 @@ buildscript {
         classpath (BuildPlugins.androidGradlePlugin)
         classpath (BuildPlugins.hiltGradlePlugin)
         classpath (BuildPlugins.navigation_gradle_plugin)
-        classpath (BuildPlugins.easylauncher)
+//        classpath (BuildPlugins.easylauncher)
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

@@ -20,12 +20,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         var loading = true
-        binding.button.setOnClickListener {
-//          val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
-//          findNavController().navigate(action)
-            viewModel.handlerLoading(loading)
-            loading = !loading
-        }
+//        binding?.button.setOnClickListener {
+////          val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
+////          findNavController().navigate(action)
+//            viewModel.handlerLoading(loading)
+//            loading = !loading
+//        }
     }
 
     private fun handleLoading(isLoading: Boolean) {

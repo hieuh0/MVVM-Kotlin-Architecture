@@ -2,9 +2,7 @@ package scripts
 
 import gradle.kotlin.dsl.accessors._e49ea27463ecffe8ec29f51a59fc50e7.android
 
-plugins { id("com.android.application") apply false
-        id( "com.akaita.android.easylauncher")
-}
+plugins { id("com.android.application") apply false}
 
 private object BuildTypes {
     const val DEBUG = "debug"
@@ -57,7 +55,4 @@ android {
             dimension = FlavorDimensions.DEFAULT
         }
     }
-}
-easylauncher{
-
 }
