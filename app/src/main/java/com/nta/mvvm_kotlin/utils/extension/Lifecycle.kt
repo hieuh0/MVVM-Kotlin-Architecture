@@ -1,9 +1,9 @@
-package com.nta.mvvm_kotlin.extension
+package com.nta.mvvm_kotlin.utils.extension
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.nta.mvvm_kotlin.Failure
+import com.nta.mvvm_kotlin.utils.exception.Failure
 
 //TODO : change non-null
 //fun <T : Any, L : LiveData<T>> LifecycleOwner.observe(liveData: L, body: (T?) -> Unit) =

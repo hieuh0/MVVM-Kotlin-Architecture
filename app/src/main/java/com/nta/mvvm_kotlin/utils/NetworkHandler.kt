@@ -1,4 +1,4 @@
-package com.nta.mvvm_kotlin
+package com.nta.mvvm_kotlin.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -13,6 +13,7 @@ import javax.inject.Singleton
 class NetworkHandler @Inject constructor(@ApplicationContext private val context: Context) {
 
     fun isNetworkAvailable(): Boolean {
+
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -61,7 +61,9 @@ object Libraries{
         const val ktx = "1.3.1"
         const val glide = "4.11.0"
         const val retrofit = "2.9.0"
-        const val okHttpLoggingInterceptor = "4.9.0"
+        const val moshi = "1.12.0"
+        const val moshi_converter = "2.9.0"
+        const val okHttpLoggingInterceptor = "4.9.1"
         const val nav_version = "2.3.5"
         const val stetho_version = "1.6.0"
         const val fragment_version = "1.3.3"
@@ -88,7 +90,12 @@ object Libraries{
     const val stetho = "com.facebook.stetho:stetho:${Versions.stetho_version}"
     const val stetho_okhttp3 = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho_version}"
     const val fragment_ktx = "androidx.fragment:fragment-ktx:${Versions.fragment_version}"
-
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val moshi = "com.squareup.moshi:moshi:${Versions.moshi}"
+    const val moshi_converter = "com.squareup.retrofit2:converter-moshi:${Versions.moshi_converter}"
+    const val okHttpLoggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingInterceptor}"
+    const val retrofit_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
 }
 
 object TestLibraries {

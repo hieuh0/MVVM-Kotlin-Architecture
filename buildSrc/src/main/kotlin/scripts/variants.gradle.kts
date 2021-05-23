@@ -30,7 +30,7 @@ android {
     buildTypes {
         getByName(BuildTypes.DEBUG) {
             isMinifyEnabled = false
-            applicationIdSuffix = ".${BuildTypes.DEBUG}"
+//            applicationIdSuffix = ".${BuildTypes.DEBUG}"
             isDebuggable = true
         }
         getByName(BuildTypes.RELEASE) {
@@ -43,12 +43,12 @@ android {
     productFlavors {
         create(ProductFlavors.DEV) {
             dimension = FlavorDimensions.DEFAULT
-            applicationIdSuffix = ".${ProductFlavors.DEV}"
+//            applicationIdSuffix = ".${ProductFlavors.DEV}"
             versionNameSuffix = "-${ProductFlavors.DEV}"
         }
         create(ProductFlavors.STAGING) {
             dimension = FlavorDimensions.DEFAULT
-            applicationIdSuffix = ".${ProductFlavors.STAGING}"
+//            applicationIdSuffix = ".${ProductFlavors.STAGING}"
             versionNameSuffix = "-${ProductFlavors.STAGING}"
         }
         create(ProductFlavors.PROD) {

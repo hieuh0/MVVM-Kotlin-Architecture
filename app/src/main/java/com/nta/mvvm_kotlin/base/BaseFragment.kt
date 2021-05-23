@@ -17,7 +17,7 @@ abstract class BaseFragment<DataBinding : ViewDataBinding>: Fragment() {
     abstract fun onInit()
 
     val binding
-    get() = _binding
+    get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,15 +25,19 @@ abstract class BaseFragment<DataBinding : ViewDataBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater,getLayoutId(),container,false)
-        return _binding!!.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding?.apply {
+        binding.apply {
             lifecycleOwner = this@BaseFragment
         }
         onInit()
+    }
+
+    fun listenerLoading(viewModel : BaseViewModel){
+        (activity as BaseActivity<*>).listenerLoading(viewModel)
     }
 
     fun showLoading(isLoading : Boolean){
@@ -44,5 +48,10 @@ abstract class BaseFragment<DataBinding : ViewDataBinding>: Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
 
 }

@@ -5,26 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.viewModels
-import com.nta.mvvm_kotlin.HomeViewModel
 import com.nta.mvvm_kotlin.R
-import com.nta.mvvm_kotlin.extension.beGone
-import com.nta.mvvm_kotlin.extension.beVisibleIf
-import com.nta.mvvm_kotlin.extension.observe
+import com.nta.mvvm_kotlin.utils.extension.beGone
+import com.nta.mvvm_kotlin.utils.extension.beVisibleIf
+import com.nta.mvvm_kotlin.utils.extension.observe
 
 abstract class BaseActivity<DataBinding : ViewDataBinding> : AppCompatActivity() {
 
-    private val viewModel by viewModels<BaseViewModel>()
-
-    private var _binding : DataBinding? = null
-
-    abstract fun fragment() : Fragment?
+    private var _binding: DataBinding? = null
 
     abstract fun onInit()
 
@@ -32,25 +25,25 @@ abstract class BaseActivity<DataBinding : ViewDataBinding> : AppCompatActivity()
 
     abstract fun getLayoutId(): Int
 
-    private lateinit var loadingView : View
+    private lateinit var loadingView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = DataBindingUtil.setContentView(this, getLayoutId())
-        _binding?.executePendingBindings()
-        _binding?.apply {
+        _binding!!.executePendingBindings()
+        _binding!!.apply {
             lifecycleOwner = this@BaseActivity
-        }
-        fragment()?.let {
-            addFragment(it, R.id.container, false)
         }
         initLoadingView()
         onInit()
-        observe(viewModel.loading,::handlerLoading)
     }
 
-    private fun handlerLoading(isLoading: Boolean){
-        showLoading(isLoading)
+    fun listenerLoading(viewModel: BaseViewModel) {
+        with(viewModel) {
+            observe(loading){
+                // TODO
+            }
+        }
     }
 
     fun addFragment(
@@ -76,7 +69,7 @@ abstract class BaseActivity<DataBinding : ViewDataBinding> : AppCompatActivity()
     }
 
     @SuppressLint("InflateParams")
-    private fun initLoadingView(){
+    private fun initLoadingView() {
         loadingView = LayoutInflater.from(this).inflate(R.layout.loading_view, null).apply {
             z = 500f
             beGone()
@@ -88,7 +81,8 @@ abstract class BaseActivity<DataBinding : ViewDataBinding> : AppCompatActivity()
         container.invalidate()
     }
 
-    fun showLoading(isLoading : Boolean){
+    fun showLoading(isLoading: Boolean) {
         loadingView.beVisibleIf(isLoading)
     }
+
 }

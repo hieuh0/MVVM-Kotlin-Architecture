@@ -48,4 +48,9 @@ dependencies {
     implementation(Libraries.navigation_ui)
     implementation(Libraries.stetho)
     implementation(Libraries.stetho_okhttp3)
+    implementation(Libraries.retrofit)
+    implementation(Libraries.okHttpLoggingInterceptor)
+    implementation(Libraries.moshi)
+    implementation(Libraries.retrofit_converter)
+    implementation(Libraries.moshi_converter)
 }

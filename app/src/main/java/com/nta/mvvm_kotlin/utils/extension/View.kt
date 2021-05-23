@@ -1,4 +1,4 @@
-package com.nta.mvvm_kotlin.extension
+package com.nta.mvvm_kotlin.utils.extension
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

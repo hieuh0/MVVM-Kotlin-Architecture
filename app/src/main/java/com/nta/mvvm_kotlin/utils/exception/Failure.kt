@@ -1,4 +1,4 @@
-package com.nta.mvvm_kotlin
+package com.nta.mvvm_kotlin.utils.exception
 
 /**
  * Base Class for handling errors/failures/exceptions.

@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MVVMKotlin">
-        <activity android:name="com.nta.mvvm_kotlin.MainActivity">
+        <activity android:name="com.nta.mvvm_kotlin.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
