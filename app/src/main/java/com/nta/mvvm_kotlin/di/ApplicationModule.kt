@@ -1,6 +1,8 @@
 package com.nta.mvvm_kotlin.di
 
 import com.nta.mvvm_kotlin.BuildConfig
+import com.nta.mvvm_kotlin.WeatherRepositoryImp
+import com.nta.mvvm_kotlin.domain.WeatherApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,13 +20,14 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit {
+    fun provideRetrofit(): WeatherApi {
         return Retrofit.Builder()
             .baseUrl("https://www.metaweather.com")
             .client(createClient())
             .addConverterFactory(GsonConverterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
+            .create(WeatherApi::class.java)
     }
 
     private fun createClient(): OkHttpClient {
@@ -36,4 +39,9 @@ class ApplicationModule {
         }
         return okHttpClientBuilder.build()
     }
+
+
+    @Provides
+    @Singleton
+    fun provideWeatherRepository(dataSource: WeatherRepositoryImp.WeatherRepository): WeatherRepositoryImp = dataSource
 }

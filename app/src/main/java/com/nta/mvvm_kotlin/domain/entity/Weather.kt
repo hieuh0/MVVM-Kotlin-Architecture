@@ -4,6 +4,9 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 class Weather {
+
+    constructor( woeid: Int,title: String)
+
     private val distance: Int? = null
 
     private val title: String? = null
